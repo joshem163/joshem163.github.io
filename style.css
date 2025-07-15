@@ -85,10 +85,12 @@ footer {
 }
 
 .math-blur {
-  width: 80px;
-  height: auto;
+  width: 40px; /* Set a fixed width */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 20px; /* Optional: limit height */
   filter: blur(4px);
   opacity: 0.6;
+  object-fit: contain; /* Ensures image doesn't stretch */
 }
 
 .math-blur.left {
