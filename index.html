@@ -86,9 +86,9 @@
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.4fr .6fr;
+      grid-template-columns: 1.25fr 0.75fr;
       gap: 24px;
-      align-items: stretch;
+      align-items: start;   /* change from stretch */
     }
     .hero-card, .photo-card {
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
@@ -97,7 +97,7 @@
       box-shadow: var(--shadow);
     }
     .hero-card {
-      padding: 22px;
+      padding: 20px;
       position: relative;
       overflow: hidden;
     }
@@ -185,10 +185,11 @@
       background: rgba(255,255,255,0.03); /* lighter/cleaner than current gradient */
     }
     .profile-photo {
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.18); /* slightly brighter border */
-      background: none; /* remove fallback gradient behind image */
-      object-position: center top; /* optional: better face framing */
+      width: 100%;
+      height: 420px;          /* try 380px–460px */
+      object-fit: cover;
+      object-position: center top;
+      aspect-ratio: auto;     /* disable old aspect-ratio if set */
     }
     .photo-note {
       color: var(--muted);
