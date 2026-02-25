@@ -97,7 +97,7 @@
       box-shadow: var(--shadow);
     }
     .hero-card {
-      padding: 28px;
+      padding: 22px;
       position: relative;
       overflow: hidden;
     }
@@ -156,10 +156,11 @@
       font-size: .88rem;
     }
     .cta-row {
-      margin-top: 18px;
+      margin-top: 14px;
+      margin-bottom: 0;
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
     .btn {
       display: inline-flex;
@@ -180,18 +181,14 @@
     .btn:hover { text-decoration: none; transform: translateY(-1px); }
 
     .photo-card {
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      padding: 10px; /* was 14px */
+      background: rgba(255,255,255,0.03); /* lighter/cleaner than current gradient */
     }
     .profile-photo {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: linear-gradient(135deg, rgba(122,162,255,.15), rgba(132,255,216,.10));
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.18); /* slightly brighter border */
+      background: none; /* remove fallback gradient behind image */
+      object-position: center top; /* optional: better face framing */
     }
     .photo-note {
       color: var(--muted);
