@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,29 +10,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
   <style>
-  :root{
-    --bg: #f6f7fb;          /* soft off-white */
-    --bg-soft: #ffffff;
-    --card: rgba(17,24,39,0.04);
-    --card-border: rgba(17,24,39,0.10);
-  
-    --text: #111827;        /* near-black */
-    --muted: #4b5563;       /* slate */
-    --accent: #2f6bff;      /* keep a nice blue */
-    --accent-2: #10b981;    /* soft green */
-    --shadow: 0 10px 24px rgba(17,24,39,0.10);
-  }
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #111831;
+      --card: rgba(255,255,255,0.06);
+      --card-border: rgba(255,255,255,0.12);
+      --text: #eaf0ff;
+      --muted: #b9c4e6;
+      --accent: #7aa2ff;
+      --accent-2: #84ffd8;
+      --shadow: 0 12px 28px rgba(0,0,0,0.25);
+      --radius: 18px;
+      --maxw: 1120px;
+    }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body{
+    body {
       margin: 0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(900px 500px at 10% 0%, rgba(47,107,255,0.10), transparent 55%),
-        radial-gradient(700px 420px at 95% 10%, rgba(16,185,129,0.08), transparent 55%),
-        linear-gradient(180deg, #f8fafc 0%, var(--bg) 45%, var(--bg) 100%);
+        radial-gradient(1000px 500px at 10% -10%, rgba(122,162,255,.18), transparent 60%),
+        radial-gradient(800px 420px at 95% 5%, rgba(132,255,216,.12), transparent 55%),
+        linear-gradient(180deg, #090d1a 0%, #0b1020 40%, #0b1020 100%);
       line-height: 1.6;
     }
 
@@ -40,7 +42,14 @@
 
     .container { width: min(var(--maxw), 92vw); margin: 0 auto; }
 
-
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,16,32,0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
     .nav-inner {
       display: flex;
       align-items: center;
@@ -61,7 +70,17 @@
       gap: 8px;
       justify-content: flex-end;
     }
-
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+    .nav-links a:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.06);
+      text-decoration: none;
+    }
 
     .hero {
       padding: 64px 0 30px;
@@ -72,8 +91,17 @@
       gap: 24px;
       align-items: start;   /* change from stretch */
     }
-
-
+    .hero-card, .photo-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid var(--card-border);
+      border-radius: calc(var(--radius) + 4px);
+      box-shadow: var(--shadow);
+    }
+    .hero-card {
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
     .hero-card::after {
       content: "";
       position: absolute;
@@ -135,7 +163,22 @@
       flex-wrap: wrap;
       gap: 8px;
     }
-
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #fff;
+      text-decoration: none;
+      background: rgba(255,255,255,0.04);
+    }
+    .btn.primary {
+      background: linear-gradient(180deg, rgba(122,162,255,.28), rgba(122,162,255,.12));
+      border-color: rgba(122,162,255,.35);
+    }
     .btn:hover { text-decoration: none; transform: translateY(-1px); }
 
     .photo-card {
@@ -179,35 +222,13 @@
       grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
-.nav{
-  background: rgba(246,247,251,0.85);
-  border-bottom: 1px solid rgba(17,24,39,0.08);
-}
-
-.nav-links a{ color: var(--muted); }
-.nav-links a:hover{ color: var(--text); background: rgba(17,24,39,0.05); }
-
-.hero-card, .photo-card, .card{
-  background: rgba(255,255,255,0.70);
-  border: 1px solid rgba(17,24,39,0.10);
-}
-
-.btn{
-  color: var(--text);
-  background: rgba(17,24,39,0.04);
-  border: 1px solid rgba(17,24,39,0.10);
-}
-.btn.primary{
-  color: #ffffff;
-  background: linear-gradient(180deg, rgba(47,107,255,.95), rgba(47,107,255,.75));
-  border-color: rgba(47,107,255,.45);
-}
-
-.tag{
-  color: var(--text);
-  background: rgba(17,24,39,0.04);
-  border: 1px solid rgba(17,24,39,0.10);
-}
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
 
     .about p { margin: 0; color: #e3ebff; }
     .mini-list {
