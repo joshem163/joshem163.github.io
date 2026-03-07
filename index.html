@@ -9,30 +9,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0b1020;
-      --bg-soft: #111831;
-      --card: rgba(255,255,255,0.06);
-      --card-border: rgba(255,255,255,0.12);
-      --text: #eaf0ff;
-      --muted: #b9c4e6;
-      --accent: #7aa2ff;
-      --accent-2: #84ffd8;
-      --shadow: 0 12px 28px rgba(0,0,0,0.25);
-      --radius: 18px;
-      --maxw: 1120px;
-    }
+  :root{
+    --bg: #f6f7fb;          /* soft off-white */
+    --bg-soft: #ffffff;
+    --card: rgba(17,24,39,0.04);
+    --card-border: rgba(17,24,39,0.10);
+  
+    --text: #111827;        /* near-black */
+    --muted: #4b5563;       /* slate */
+    --accent: #2f6bff;      /* keep a nice blue */
+    --accent-2: #10b981;    /* soft green */
+    --shadow: 0 10px 24px rgba(17,24,39,0.10);
+  }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
+    body{
       margin: 0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(1000px 500px at 10% -10%, rgba(122,162,255,.18), transparent 60%),
-        radial-gradient(800px 420px at 95% 5%, rgba(132,255,216,.12), transparent 55%),
-        linear-gradient(180deg, #090d1a 0%, #0b1020 40%, #0b1020 100%);
+        radial-gradient(900px 500px at 10% 0%, rgba(47,107,255,0.10), transparent 55%),
+        radial-gradient(700px 420px at 95% 10%, rgba(16,185,129,0.08), transparent 55%),
+        linear-gradient(180deg, #f8fafc 0%, var(--bg) 45%, var(--bg) 100%);
       line-height: 1.6;
     }
 
