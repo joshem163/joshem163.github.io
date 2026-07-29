@@ -1,0 +1,12 @@
+Copy your existing website assets into this folder:
+
+joshem.jpg
+CV_Uddin.pdf
+IMG_3457.jpg
+siam.jpeg
+austin.jpg
+grad.jpg
+lab.jpeg
+afm.jpg
+
+Keep the css/ and js/ subfolders already included here.
